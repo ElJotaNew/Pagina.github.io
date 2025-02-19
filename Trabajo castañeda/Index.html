@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desayuno para el cambio</title>
+  <link rel="shortcut icon" href="Logo.ico">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Indicador de progreso de scroll -->
+  <div id="progressBar"></div>
+
+  <!-- Header fijo (sticky) -->
+  <header>
+    <!-- Reemplaza "logo.png" por tu logo -->
+    <img src="logo.png" alt="Logo" loading="eager" />
+    <h1>Desayuno para el cambio (DPC)</h1>
+    <div class="accessibility">
+      <button id="decreaseFont" aria-label="Disminuir tamaño de fuente">A–</button>
+      <button id="increaseFont" aria-label="Aumentar tamaño de fuente">A+</button>
+    </div>
+    <button id="toggleMode">Modo Oscuro</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar con menú -->
+    <aside class="sidebar">
+      <div class="dropdown">
+        <button class="dropdown-btn">Menú</button>
+        <div class="dropdown-content">
+          <a href="#beneficios">Beneficios de un buen desayuno</a>
+          <a href="#piramide">Pirámide alimenticia</a>
+          <a href="#imc">Calculadora IMC</a>
+          <!-- Abre el modal del Test -->
+          <a href="#test" id="openTestModalBtn">Un Test</a>
+          <a href="#historias">Historias de Éxito</a>
+          <a href="#faq">Preguntas Frecuentes</a>
+          <a href="#sobre-nosotros">Sobre Nosotros</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Sección de Bienvenida -->
+      <section class="intro animated welcome">
+        <h2>Bienvenido</h2>
+        <p>
+          Descubre el mundo de la nutrición y el bienestar con información, herramientas interactivas y testimonios inspiradores.
+        </p>
+      </section>
+
+      <!-- Video Introductorio -->
+      <section id="videoIntro" class="animated">
+        <h2>Video Introductorio</h2>
+        <!-- Ajusta "video.mp4" y "video-poster.jpg" según tus archivos -->
+        <video controls width="100%" poster="video-poster.jpg" loading="lazy">
+          <source src="video.mp4" type="video/mp4" />
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </section>
+
+      <!-- Beneficios de un buen desayuno -->
+      <section id="beneficios" class="animated">
+        <h2>Beneficios de un buen desayuno</h2>
+        <p>
+          Un desayuno balanceado potencia tu energía y concentración durante el día.
+        </p>
+        <div class="benefits-slider">
+          <!-- Reemplaza estas imágenes por las tuyas -->
+          <img class="benefit-slide active" src="benefit1.jpg" alt="Beneficio 1" loading="lazy" />
+          <img class="benefit-slide" src="benefit2.jpg" alt="Beneficio 2" loading="lazy" />
+          <img class="benefit-slide" src="benefit3.jpg" alt="Beneficio 3" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Pirámide alimenticia -->
+      <section id="piramide" class="animated">
+        <h2>Pirámide alimenticia <span class="indicator">¡Mira aquí!</span></h2>
+        <p>
+          Aprende a distribuir tus grupos de alimentos para una dieta equilibrada.
+        </p>
+      </section>
+      <!-- Contenedor centrado para la imagen de la pirámide, sin sombra -->
+      <div id="piramideImage">
+        <!-- Ajusta "piramide.png" según tu archivo -->
+        <img src="piramide.png" alt="Pirámide alimenticia" loading="lazy" />
+      </div>
+      <!-- Indicadores para la pirámide -->
+      <div class="piramide-indicators">
+        <span class="dot active" tabindex="0" aria-label="Indicador 1"></span>
+        <span class="dot" tabindex="0" aria-label="Indicador 2"></span>
+        <span class="dot" tabindex="0" aria-label="Indicador 3"></span>
+      </div>
+
+      <!-- Calculadora de IMC -->
+      <section id="imc" class="animated">
+        <h2>Calculadora IMC</h2>
+        <form id="imcForm">
+          <label for="weight">Peso (kg):</label>
+          <input type="number" id="weight" name="weight" step="0.1" required />
+          <br />
+          <label for="height">Altura (m):</label>
+          <input type="number" id="height" name="height" step="0.01" required />
+          <br />
+          <button type="button" id="calculateImc">Calcular IMC</button>
+        </form>
+        <div id="imcResult"></div>
+        <div id="imcIndicator"></div>
+        <p class="imc-explanation">
+          Se calcula dividiendo el peso (kg) entre el cuadrado de la altura (m). Un IMC entre 18.5 y 24.9 se considera saludable.
+        </p>
+      </section>
+
+      <!-- Historias de Éxito -->
+      <section id="historias" class="animated">
+        <h2>Historias de Éxito</h2>
+        <div class="slider-container">
+          <button class="prev" aria-label="Anterior">&#10094;</button>
+          <div class="slider">
+            <div class="slide active">
+              <p>"Este programa cambió mi vida. Ahora desayuno sano y tengo más energía."</p>
+              <span>- Persona A</span>
+            </div>
+            <div class="slide">
+              <p>"Recomiendo Desayuno para el cambio; mi salud ha mejorado notablemente."</p>
+              <span>- Persona B</span>
+            </div>
+            <div class="slide">
+              <p>"Las recetas y consejos son fantásticos. ¡Una experiencia transformadora!"</p>
+              <span>- Persona C</span>
+            </div>
+          </div>
+          <button class="next" aria-label="Siguiente">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- Preguntas Frecuentes (FAQ) -->
+      <section id="faq" class="animated">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">¿Por qué es importante desayunar?</button>
+          <div class="faq-answer">
+            <p>El desayuno activa el metabolismo y aporta la energía necesaria para comenzar el día.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">¿Qué alimentos se recomiendan?</button>
+          <div class="faq-answer">
+            <p>Se recomienda incluir carbohidratos, proteínas y grasas saludables.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">¿Con qué frecuencia debo desayunar?</button>
+          <div class="faq-answer">
+            <p>Es ideal desayunar todos los días para mantener un buen nivel de energía.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sobre Nosotros -->
+      <section id="sobre-nosotros" class="animated">
+        <h2>Sobre Nosotros</h2>
+        <p>
+          En Desayuno para el cambio (DPC) nos apasiona promover hábitos saludables a través de un buen desayuno. Nuestra misión es inspirar y educar para lograr una vida más plena y energética.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Botón "Volver arriba" -->
+  <button id="backToTop" title="Volver arriba">&#8679;</button>
+
+  <!-- Modal para el Test (ventana emergente centrada) -->
+  <div id="testModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeTestModal" tabindex="0" aria-label="Cerrar modal">&times;</span>
+      <h2>Test de Nutrición</h2>
+      <form id="quizForm">
+        <div class="question">
+          <p>1. ¿Cuál de los siguientes es un beneficio de un buen desayuno?</p>
+          <label><input type="radio" name="q1" value="a" /> A) Mejora la concentración</label><br />
+          <label><input type="radio" name="q1" value="b" /> B) Disminuye la energía</label><br />
+          <label><input type="radio" name="q1" value="c" /> C) Genera sed</label><br />
+        </div>
+        <div class="question">
+          <p>2. ¿Qué grupo alimenticio debería incluirse en el desayuno?</p>
+          <label><input type="radio" name="q2" value="a" /> A) Carbohidratos</label><br />
+          <label><input type="radio" name="q2" value="b" /> B) Grasas saturadas</label><br />
+          <label><input type="radio" name="q2" value="c" /> C) Alimentos ultraprocesados</label><br />
+        </div>
+        <button type="button" id="submitQuiz">Enviar Respuestas</button>
+      </form>
+      <div id="quizResult"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Desayuno para el cambio (DPC). Todos los derechos reservados.</p>
+    <nav>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#piramide">Pirámide</a>
+      <a href="#imc">IMC</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
